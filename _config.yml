@@ -1,1 +1,17 @@
-theme: jekyll-theme-minimal
+# Site settings
+title: Mohammed Sheikh's blog
+email: 
+description: "Some analysis."
+baseurl: ""
+url: "http://mohashei.github.io"
+github_username:  mohashei
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
