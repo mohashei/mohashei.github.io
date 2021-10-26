@@ -6,4 +6,6 @@ excerpt: "An attempt to take a deep dive into a protein folding neural network f
 date:   2022-10-26 22:00:00
 ---
 
-Some prerequisits: Read https://fabianfuchsml.github.io/alphafold2/ to get a grasp of the problem at hand.
+Some prerequisits: Read [this post](https://fabianfuchsml.github.io/alphafold2/) by Fabian Fuchs to get a grasp of the problem at hand without the need for superfluous detail. I want to restate some of the facts here since it makes things clearer.
+
+\\( a^2 = b^2 \\)
