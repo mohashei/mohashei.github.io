@@ -29,7 +29,7 @@ By angles of the backbone, I mean the torsion angles the backbone atoms have wit
 
 <div class="imgcap">
 <img src="/assets/amino-acid.png"
-     width="400"
+     width="200"
      height="auto">
 <div class="thecap">
   This is taken from Ramachandran, G.N.; Sasiskharan, V. (1968). <em>Conformation of polypeptides and proteins</em>.
