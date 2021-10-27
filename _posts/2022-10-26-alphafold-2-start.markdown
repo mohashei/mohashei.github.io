@@ -28,7 +28,9 @@ The physics of protein folding is remarkably simple at first glance. Proteins co
 By angles of the backbone, I mean the torsion angles the backbone atoms have with each other. Since each backbone atom is attached to many other atoms besides the backbone, the torsion angles essentially determine the way the protein is shaped. The torsion angle between the carbon and nitrogen is known as \\(\omega\\), between the nitrogen and the alpha carbon it is \\(\phi\\), and between the alpha carbon and the alpha it is \\(\psi\\). It turns out that because of the double bond resonance structure of the carbon nitrogen bond, the angle \\(\omega\\) is almost always \\(180^\circ\\) (i.e. a flip). The follwing diagram, taken from a classic paper, shows this in action.
 
 <div class="imgcap">
-<img src="/assets/amino-acid.png">
+<img src="/assets/amino-acid.png"
+     width="400"
+     height="auto">
 <div class="thecap">
   This is taken from Ramachandran, G.N.; Sasiskharan, V. (1968). <em>Conformation of polypeptides and proteins</em>.
 </div>
