@@ -36,4 +36,4 @@ By angles of the backbone, I mean the torsion angles the backbone atoms have wit
 </div>
 </div>
 
-Naturally one can also see in the above image that the \\(\text{C}\text{N}\text{C}_\alpha\\) forms a rigid plane that is very resistant to changes in orientation.
+Naturally one can also see in the above image that the \\(\text{N}\text{C}_\alpha\text{C}\\) forms a rigid plane that is very resistant to changes in orientation.
