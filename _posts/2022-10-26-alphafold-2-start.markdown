@@ -36,4 +36,4 @@ By angles of the backbone, I mean the torsion angles the backbone atoms have wit
 </div>
 </div>
 
-Naturally one can also see in the above image that the \\(\text{N}\text{C}_\alpha\text{C}\\) forms a rigid plane that is very resistant to changes in orientation.
+Naturally one can also see in the above image that the \\(\text{N}\text{C}_\alpha\text{C}\\) forms a rigid plane that is very resistant to changes in orientation. So now the protein folding problem is reduced down to finding the locations of the various backbone atoms. Sidechains can then be deduced based on the locations of these atoms. A useful scale of the whole problem is to think about the bond lengths between the various atoms, which are about 1.2-1.5 \\(\AA\\).
