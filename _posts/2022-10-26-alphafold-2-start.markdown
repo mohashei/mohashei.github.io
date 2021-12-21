@@ -49,7 +49,7 @@ A useful way to gain intuition is to consider an example amino acid. For example
 </div>
 </div>
 
-Here the \\(\text{C}_{\alpha}\\) binds to the hydroxyl group \\(\text{-OH}\\) and the methyl group (\\(\text{-CH}_3\\)).
+Here the \\(\text{C}_{\alpha}\\) binds to the hydroxyl group \\(\text{-OH}\\) and the methyl group \\(\text{-CH}_3\\).
 
 In addition to the static parts of the problem, there are also the energetics and kinematics. One of the interesting things about the protein folding problem is that disorder plays a big role in the energy landscape. For example, in principle, we should be able to take \\(F = -\nabla E\\) as our equation of motion (neglecting quantum effects, or putting them into the problem in the \\(E\\) calculation) and watch the protein fold using molecular dynamics. However, anyone who has studied glassy systems knows that such simulations end up taking forever! On the timescales that we can step at, proteins would never fold, because they would get caught in some intermediate state.
 
