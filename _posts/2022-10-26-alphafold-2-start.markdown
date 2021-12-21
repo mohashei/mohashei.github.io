@@ -38,16 +38,7 @@ By angles of the backbone, I mean the torsion angles the backbone atoms have wit
 
 Naturally one can also see in the above image that the \\(\text{N}\text{C}^\alpha\text{C}\\) forms a rigid plane. So now the protein folding problem is reduced down to finding the locations of the various backbone atoms. Sidechains can then be deduced based on the locations of these atoms. A useful scale of the whole problem is to think about the bond lengths between the various atoms, which are about 1.2-1.5 Å.
 
-A useful way to gain intuition is to consider an example amino acid. For example, Threonine, symbolized with __T__ or __Thr__, is an amino acid with a hydroxyl group sidechain. 
-
-<div class="imgcap">
-<img src="/assets/threonine.png"
-     width="350"
-     height="auto">
-<div class="thecap">
-  Taken from Wikipedia. The threonine molecule has a sidechain containing a hydroxyl group which makes it a polar amino acid.
-</div>
-</div>
+A useful way to gain intuition is to consider an example amino acid. For example, Threonine, symbolized with __T__ or __Thr__, is an amino acid with a hydroxyl group sidechain.
 
 Here the \\(\text{C}_{\alpha}\\) binds to the hydroxyl group \\(\text{-OH}\\) and the methyl group \\(\text{-CH}_3\\).
 
