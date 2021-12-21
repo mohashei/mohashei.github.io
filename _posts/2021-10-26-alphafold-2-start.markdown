@@ -38,6 +38,19 @@ By angles of the backbone, I mean the torsion angles the backbone atoms have wit
 
 Naturally one can also see in the above image that the \\(\text{N}\text{C}^\alpha\text{C}\\) forms a rigid plane. So now the protein folding problem is reduced down to finding the locations of the various backbone atoms. Sidechains can then be deduced based on the locations of these atoms. A useful scale of the whole problem is to think about the bond lengths between the various atoms, which are about 1.2-1.5 Å.
 
+A useful way to gain intuition is to consider an example amino acid. For example, Threonine, symbolized with __T__ or __Thr__, is an amino acid with a hydroxyl group sidechain. 
+
+<div class="imgcap">
+<img src="/assets/threonine.png"
+     width="350"
+     height="auto">
+<div class="thecap">
+  Taken from Wikipedia. The threonine molecule has a sidechain containing a hydroxyl group which makes it a polar amino acid.
+</div>
+</div>
+
+Here the \\(\text{C}_{\alpha}\\) binds to the hydroxyl group \\(\text{-OH}\\) and the methyl group \\(\text{-CH}_3\\).
+
 In addition to the static parts of the problem, there are also the energetics and kinematics. One of the interesting things about the protein folding problem is that disorder plays a big role in the energy landscape. For example, in principle, we should be able to take \\(F = -\nabla E\\) as our equation of motion (neglecting quantum effects, or putting them into the problem in the \\(E\\) calculation) and watch the protein fold using molecular dynamics. However, anyone who has studied glassy systems knows that such simulations end up taking forever! On the timescales that we can step at, proteins would never fold, because they would get caught in some intermediate state.
 
 In biological systems, it seems these protein energy landscapes are similar to funnels (see for example [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2443096/)). Basically there are only a few low energy states for the protein to be in, as well as an astronomical number of high energy states. This is the reason why proteins get denatured at high temperature, where "high" temperature here means \\(k_BT >> \Delta E\\), with \\(\Delta E\\) being the energy difference between the average protein state and the folded state(s). One can't help but think that there is an analogy to machine learning problems, where the loss energy landscape seems to be similarly noisy with many high loss states, but only a few low loss states. The kinetics of the problem are fascinating, and also lead to many questions. For example, it's possible that the low energy states are not exactly single folded states, but entire landscapes of folded states. Can one tell based off of just the sequence that certain landscapes will be disordered, multiple ordered, or single folded states?
@@ -49,3 +62,5 @@ We introduced the notion of a the \\(\phi_k, \psi_k, \omega_k\\) angles for prot
 Another potential is to have relative coordinates, where the set of residues is represented by a single coordinate, and then relative coordinates are used to get atomic distances (i.e. based on constraints). Since distances are fixed between residue atoms, it's usually the \\(\text{C}^{\alpha}\\) atom that gets chosen as the center of the residue (and in many ways it is, since the sidechain attaches to it). Then only the relative angles are needed. In this case, the coordinates \\(\mathbf{x}_{\text{C}^{\alpha}_k}\\) are still used.
      
 A fourth method is to consider just the distances between \\(\text{C}^{\alpha}\\) atoms and the angles of the planes which they form with the \\(\text{N}\\) and \\(\text{C}\\) atoms. This method is similar to the previous one, but since we're using distances instead of coordinates, this method requires more work to reconstruct the 3D coordinates. In particular, [multidimensional scaling](https://en.wikipedia.org/wiki/Multidimensional_scaling) is used to find the 3D coordinates. This method has a disadvantage though. We're no longer training on the raw 3D coordinates, so the objective functions need to change. The other problem is that MDS is basically an embedding, not an exact reconstruction. There's no guarantee that the distance matrix will actually be satisfiable in 3D.
+
+So what representations are common? In the PDB database, it seems that standard coordinates from some origin value are used to represent the protein structure. A lot of information can be gained by looking at this handy [guide](https://pdb101.rcsb.org/learn/guide-to-understanding-pdb-data/dealing-with-coordinates). Alphafold 2 also seems to use this approach to represent part of the prediction for its protein folding coordinates, but also seems to incorporate other representations when convenient. Particularly, it seems residue-residue distances are important, as well as the torisonal distances.
