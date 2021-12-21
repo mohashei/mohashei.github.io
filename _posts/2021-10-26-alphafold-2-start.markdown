@@ -57,7 +57,7 @@ In biological systems, it seems these protein energy landscapes are similar to f
 
 <h3>Parameterizing The Problem</h3>
      
-We introduced the notion of a the \\(\phi_k, \psi_k, \omega_k\\) angles for proteins with \\(k\\) being the residue index. Since these are the most relevant degrees of freedom, these are somtimes taken as a possible parameterization of the protein folding problem. This is not the only way to parameterize the problem however. The simplest way is to consider coordinates of the backbone of each residue, \\(\mathbf{x}_{\text{C}^{\alpha}_k} \mathbf{x}_{\text{C}_k}\\). The coordinates would have an origin at a single atom.
+We introduced the notion of a the \\(\phi_k, \psi_k, \omega_k\\) angles for proteins with \\(k\\) being the residue index. Since these are the most relevant degrees of freedom, these are somtimes taken as a possible parameterization of the protein folding problem. This is not the only way to parameterize the problem however. The simplest way is to consider coordinates of the backbone of each residue, \\(\mathbf{x}_{\text{C}_k}\\). The coordinates would have an origin at a single atom.
      
 Another potential is to have relative coordinates, where the set of residues is represented by a single coordinate, and then relative coordinates are used to get atomic distances (i.e. based on constraints). Since distances are fixed between residue atoms, it's usually the \\(\text{C}^{\alpha}\\) atom that gets chosen as the center of the residue (and in many ways it is, since the sidechain attaches to it). Then only the relative angles are needed. In this case, the coordinates \\(\mathbf{x}_{\text{C}^{\alpha}_k}\\) are still used.
      
