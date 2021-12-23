@@ -13,7 +13,7 @@ Any complex ML pipeline needs both global and local understanding to really get 
 
 <div class="imgcap">
 <img src="/assets/alphafold_overview.png"
-     width="350"
+     width="750"
      height="auto">
 <div class="thecap">
   Taken from <em>Jumper et. al. Highly accurate protein structure prediction with AlphaFold</em>. The input sequence is an amino acid sequence. This sequence is then searched through a genetic database for other possible matches. The MSA (alignment of all closely matching sequences) is then fed into the network. Simultaneously, a pair representation and a template are also fed into the the system. Everything is combined using the Evoformer, and fed into the structure module, which then outputs the final representation as a list of coordinates and confidences. Interestingly, this output can be fed back into the network to redo the computation and improve the result.
