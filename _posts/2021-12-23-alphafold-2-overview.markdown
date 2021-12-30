@@ -51,9 +51,30 @@ The most novel piece of the Evoformer (from the architecture perspective) is the
 <h4>The Structure Module</h4>
 <div class="imgcap">
 <img src="/assets/structure_module.png"
-     width="750"
+     width="500"
      height="auto">
 <div class="thecap">
-  Taken from <em>Jumper et. al. Highly accurate protein structure prediction with AlphaFold</em>. The structure module (SM). After 48 Evoformer stages, the SM takes the data and produces a set of 3D atom coordinates. 
+  Taken from <em>Jumper et. al. Highly accurate protein structure prediction with AlphaFold</em>. The structure module (SM). After 48 Evoformer stages, the SM takes the data and produces a set of 3D atom coordinates. Unlike the Evoformer which has unique weights per layer, the SM has a single set of weights and the refinement happens over 8 passes of the layer. A common theme is to refine predictions from the model over and over so that each pass improves the protein structure.
 </div>
 </div>
+
+The structure module (SM) is the most geometric and probably the most hand-designed part of the AlphaFold 2 system. The Evoformer spits out a pairwise output \\(\mathbf{z}_{ij}\\) as well as the MSA representation \\(\mathbf{m}_{si}\\). Here \\(i,j\\) stand for residue indices and \\(s\\) stands for the sequence alignment index. The input to the SM is the first row of \\(\mathbf{m}_{1i}\\) (they use \\(1\\)-based indexing in the supplementary material) and \\(\mathbf{z}_{ij}\\). The SM takes the two inputs and produces a couple of predictions, each of which is used as a loss or for further refinement.
+
+The representation of a protein that AF2 actually uses is somewhat complex. It's a mix-and-match of various representations we discussed before. Each residue defines a local reference frame, which we will represent as \\(T_i\\), where \\(i\\) runs over all residues. Here the reference frame we're referring to is defined by the plane of the residue, where the plane is composed of the same set of \\(\text{N}\text{C}^\alpha\text{C}\\) backbone atoms. The reference frame \\(T_i\\) can be parameterized by \\(T_i = (\mathbf{R}_i, \mathbf{t}_i)\\), where \\(\mathbf{R}_i\\) is the rotation from the local to a standard global frame, and \\(\mathbf{t_i}\\) is the translation from the local to global frame. So any vector \\(x_{local} \in \mathbb{R}^3\\) can be transformed to \\(x_{global} = \mathbf{R}_i\mathbf{x}_{local} + \mathbf{t}_i\\). This is known as a _residue gas_, a schematic of which is shown below.
+
+<div class="imgcap">
+<img src="/assets/residue_gas.png"
+     width="500"
+     height="auto">
+<div class="thecap">
+  A residue gas is just a free set of amino acids, each of which is free to rotate and translate in many distinct ways.
+</div>
+</div>
+
+Along with the residue gas representation, which handles the global protein folding problem, there's also the local protein folding problem. Inside a residue there are different degrees of freedom, and for each degree of freedom there are distinct torsion angles that AF2 predicts. From my previous learning on proteins, I was surprised that there are more degrees of freedom than I thought. The use of these extra degrees is to pin down whatever atoms that aren't free from the residue gas representation. We'll go into more detail about these in a later post.
+
+Given this set of predictions, the SM can then calculate the exact position of every atom in a protein. In addition to calculating positions, the SM also produces a very useful signal, known as the predicted LDDT score. This is sort of a measure of confidence that AF2 has for each residue in the protein.
+
+<h5>Metrics and Scores</h5>
+
+Like any good ML problem, the ultimate say on how well a model performs is based on scores. For protein folding, the most obvious score is the standard RMSD, the root-mean-squared-deviation of each atom's predicted position from it's observed position.
