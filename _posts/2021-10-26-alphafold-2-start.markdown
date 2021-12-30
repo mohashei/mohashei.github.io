@@ -51,6 +51,18 @@ A useful way to gain intuition is to consider an example amino acid. For example
 
 Here the \\(\text{C}_{\alpha}\\) binds to the hydroxyl group \\(\text{-OH}\\) and the methyl group \\(\text{-CH}_3\\).
 
+Another useful figure is taken from the [foldit wiki](https://foldit.fandom.com/wiki/Alpha_carbon), which shows how the various backbone atoms in an amino acid align with each other.
+
+<div class="imgcap">
+<img src="/assets/amino_acid_foldit.png"
+     width="350"
+     height="auto">
+<div class="thecap">
+  Taken from the Foldit wiki. Here the positions of the \\(\alpha\\) and \\(\beta\\) carbons as well as the nitrogen and carboxyl carbons are all highlighted.
+</div>
+</div>
+
+
 In addition to the static parts of the problem, there are also the energetics and kinematics. One of the interesting things about the protein folding problem is that disorder plays a big role in the energy landscape. For example, in principle, we should be able to take \\(F = -\nabla E\\) as our equation of motion (neglecting quantum effects, or putting them into the problem in the \\(E\\) calculation) and watch the protein fold using molecular dynamics. However, anyone who has studied glassy systems knows that such simulations end up taking forever! On the timescales that we can step at, proteins would never fold, because they would get caught in some intermediate state.
 
 In biological systems, it seems these protein energy landscapes are similar to funnels (see for example [here](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2443096/)). Basically there are only a few low energy states for the protein to be in, as well as an astronomical number of high energy states. This is the reason why proteins get denatured at high temperature, where "high" temperature here means \\(k_BT >> \Delta E\\), with \\(\Delta E\\) being the energy difference between the average protein state and the folded state(s). One can't help but think that there is an analogy to machine learning problems, where the loss energy landscape seems to be similarly noisy with many high loss states, but only a few low loss states. The kinetics of the problem are fascinating, and also lead to many questions. For example, it's possible that the low energy states are not exactly single folded states, but entire landscapes of folded states. Can one tell based off of just the sequence that certain landscapes will be disordered, multiple ordered, or single folded states?
