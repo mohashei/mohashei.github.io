@@ -67,7 +67,7 @@ The representation of a protein that AF2 actually uses is somewhat complex. It's
      width="500"
      height="auto">
 <div class="thecap">
-  A residue gas is just a free set of amino acids, each of which is free to rotate and translate in many distinct ways.
+  A residue gas is just a free set of amino acids, each of which is free to rotate and translate in many distinct ways. The triangles represent the frames \\(T\_i\\), while the green circles represent rotational degrees of freedom within each residue that are predicted by AF2.
 </div>
 </div>
 
