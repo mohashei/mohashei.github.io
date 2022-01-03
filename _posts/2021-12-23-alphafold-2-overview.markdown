@@ -73,8 +73,19 @@ The representation of a protein that AF2 actually uses is somewhat complex. It's
 
 Along with the residue gas representation, which handles the global protein folding problem, there's also the local protein folding problem. Inside a residue there are different degrees of freedom, and for each degree of freedom there are distinct torsion angles that AF2 predicts. From my previous learning on proteins, I was surprised that there are more degrees of freedom than I thought. The use of these extra degrees is to pin down whatever atoms that aren't free from the residue gas representation. We'll go into more detail about these in a later post.
 
-Given this set of predictions, the SM can then calculate the exact position of every atom in a protein. In addition to calculating positions, the SM also produces a very useful signal, known as the predicted LDDT score. This is sort of a measure of confidence that AF2 has for each residue in the protein.
+Given this set of predictions, the SM can then calculate the exact position of every atom in a protein. In addition to calculating positions, the SM also produces a very useful signal, known as the predicted lDDT score. This is sort of a measure of confidence that AF2 has for each residue in the protein.
 
 <h5>Metrics and Scores</h5>
 
-Like any good ML problem, the ultimate say on how well a model performs is based on scores. For protein folding, the most obvious score is the standard RMSD, the root-mean-squared-deviation of each atom's predicted position from it's observed position.
+Like any good ML problem, the ultimate say on how well a model performs is based on scores. For protein folding, the most obvious score is the standard RMSD, the root-mean-squared-deviation of each atom's predicted position from it's observed position after alignment. In order to do alignment, we have to choose a common frame between the two proteins, which is a non-trivial problem. Also, RMSD is dominated by large errors in atom positions, which might not be relfective of overall quality. This is easy to see from a standard formula, since \\(\frac{1}{N}\sum\_i \mathbf{x}\_i-\hat{\mathbf{x}}\_i)^2\\) is essentially dominated by the largest deviations. Here \\(N\\) is the number of residues, and \\(\mathbf{x}\\) is usually the atomic position of the model, while \\(\hat{\mathbf{x}}\\) is the measured position.
+
+One way to fix this is to take a coverage of only a portion of residues, and throw out the rest. This is the \\(\text{RMSD}\_{95}\\), are reported in the AF2 paper, where only \\(\text{C}^\alpha\\) atoms are considered. Here AF2 scores a 0.96Å \\(\text{RMSD}\_{95}\\). 
+
+Another method of scoring is known as GDT (global distance test), and formally I believe \\(\text{GDT}\_{TS}\\) is used (TS stands for total score). Here, essentially what is counted is the percentage of atomss within a distance cutoff. More details can be found [here](https://foldit.fandom.com/wiki/GDT).
+
+Probably the most important metric for AF2 is lDDT (local Distance Difference Test), mostly because it is also one of the predictions output by the network. As the name suggests, lDDT is a local score, so it won't capture global folding problems. The exact reference can be found [here](https://www.ncbi.nlm.nih.gov/labs/pmc/articles/PMC3799472/). As a summary, one chooses a an atom as a anchor atom, and an inclusion radius \\(R\_o\\), typically set to 15Å. Then the distance from the anchor atom to all atoms in that radius _not_ part of the residue of the anchor atom are calculated. These distances \\(\hat{L}\_i\\) are then compared with the predicted distances \\(L\_i\\). If they are within a given threshold, then the prediction is considered correct, otherwise it is incorrect. The average lDDT over all \\(\text{C}^\alpha\\) atoms is usually reported. The final measure is usually on a 0-100 scale, and can be split into a per-atom or global average.
+
+<h6>Losses</h6>
+
+Unlike metrics, which are not differentiable (well, RMSD is), we need differentiable losses, and AF2 comes replete with losses. I think the careful application of losses is one of the most important parts of AF2, and there is a potential for losses to be glossed over when looking at the network. 
+
