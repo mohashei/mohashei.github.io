@@ -6,6 +6,6 @@ excerpt: "An interactive course on neurodegenerative disease, from DNA to clinic
 date:   2026-10-29 12:00:00
 ---
 
-I put together an interactive course on neurodegenerative disease, from DNA to clinical trials, aimed at engineers who want to work on cures.
+Using Claude, I put together an interactive course on neurodegenerative disease, from DNA to clinical trials, aimed at engineers who want to work on cures.
 
 **[Open the course: Why Neurons Die](https://mohashei.github.io/why-neurons-die/)**
