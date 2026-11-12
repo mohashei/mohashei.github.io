@@ -29,7 +29,7 @@ A more motivating example of breaking is that of a pillar that carries a powerfu
      width="700"
      height="auto">
 <div class="thecap">
-  Figure 1. Left: a pillar squeezed from above bulges and then gives way along two narrow shear bands that cross in an X, like the clay specimen photographed <a href="https://en.wikipedia.org/wiki/Shear_band">here</a>. Right: zooming in on one band, the blocks on either side slide past each other along it (the thin lines were straight before the slip), held back by knots in the band. (Schematic.)
+  Figure 1. Left: a pillar squeezed from above bulges and then gives way along two narrow shear bands that cross in an X, like the clay specimen photographed <a href="https://en.wikipedia.org/wiki/Shear_band">here</a>. Right: zooming in on one band, the blocks on either side slide past each other along it (the thin lines were straight before the slip), held back by knots in the band.
 </div>
 </div>
 
@@ -41,7 +41,7 @@ A good abstracted figure of the situation is shown below:
      width="700"
      height="auto">
 <div class="thecap">
-  Figure 2. The abstract version, seen from far enough away that the rubber band (orange) looks jagged. It is pushed by a force \(f\) and held back where it is caught on pinning sites (black dots; the grey dots are all the other sites). Its shape is described by the displacement \(u(x)\). (Schematic.)
+  Figure 2. The abstract version, seen from far enough away that the rubber band (orange) looks jagged. It is pushed by a force \(f\) and held back where it is caught on pinning sites (black dots; the grey dots are all the other sites). Its shape is described by the displacement \(u(x)\).
 </div>
 </div>
 
@@ -183,7 +183,7 @@ This is a phase transition, in the same family as a magnet losing its magnetizat
      width="520"
      height="auto">
 <div class="thecap">
-  Figure 5. Velocity against force. At zero temperature (blue) nothing moves below the threshold \(f_c\). At finite temperature (orange) there is slow motion below the threshold too; that is the creep of Section 3. (Schematic.)
+  Figure 5. Velocity against force. At zero temperature (blue) nothing moves below the threshold \(f_c\). At finite temperature (orange) there is slow motion below the threshold too; that is the creep of Section 3.
 </div>
 </div>
 
@@ -266,7 +266,7 @@ $$
      width="520"
      height="auto">
 <div class="thecap">
-  Figure 6. The energy cost (12) of pushing a bump of size \(R\) forward. The top of the hill is at \(\ell_{\rm opt}\) and its height is \(U_{\rm opt}\). (Plot of equation (12) in arbitrary units.)
+  Figure 6. The energy cost (12) of pushing a bump of size \(R\) forward. The top of the hill is at \(\ell_{\rm opt}\) and its height is \(U_{\rm opt}\).
 </div>
 </div>
 
@@ -304,7 +304,7 @@ When a nucleus jumps, it pulls on its neighbors. That lowers their barriers, som
      width="700"
      height="auto">
 <div class="thecap">
-  Figure 7. Left: one nucleus, of size \(\ell_{\rm opt}\), jumps forward. Right: the jump sets off its neighbors, and the cluster grows up to a size \(\ell_{\rm av}\). (Schematic.)
+  Figure 7. Left: one nucleus, of size \(\ell_{\rm opt}\), jumps forward. Right: the jump sets off its neighbors, and the cluster grows up to a size \(\ell_{\rm av}\).
 </div>
 </div>
 
@@ -322,7 +322,7 @@ $$\ell_{\rm av}$$ is the largest size a thermal avalanche reaches.
      width="540"
      height="auto">
 <div class="thecap">
-  Figure 8. Roughness against length scale, on logarithmic axes, so that a power law is a straight line and its slope is the exponent. (Schematic.)
+  Figure 8. Roughness against length scale, on logarithmic axes, so that a power law is a straight line and its slope is the exponent.
 </div>
 </div>
 
