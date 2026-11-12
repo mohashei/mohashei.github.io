@@ -61,21 +61,21 @@ $$
 - $$F$$: pinning force, random, with $$\overline{F(x,u)F(x',u')}=\delta^d(x-x')\,\Delta(u-u')$$. $$\Delta$$ is even and decreases for $$u>0$$.
 - $$\xi$$: thermal noise, $$\langle\xi\xi\rangle=2\eta T\,\delta^d(x-x')\delta(t-t')$$.
 
-This model is complicated to interpret without some intuition. Basically the force $$f$$ is what drags the rubberband in our situation, and its position as it is dragged along is measured by $$u$$. The rubberband is one-dimensional, and so each piece of it can be displaced by a different amount, so $$u$$ is a function of the linear coordinate along the rubberband, $$u(x)$$.
+This model is complicated to interpret without some intuition. Basically the force $$f$$ is what drags the rubberband in our situation, and its position as it is dragged along is measured by $$u$$. The rubber band is one-dimensional, and so each piece of it can be displaced by a different amount, so $$u$$ is a function of the linear coordinate along the rubber band, $$u(x)$$.
 
-That is where the $$d$$ in the model comes from. It is the dimension of the thing being dragged, counted from the inside: how many numbers you need to say where you are *on* it. For the rubberband you need one, the distance along it, so $$d=1$$. The shear band in the pillar is a sheet, so there you would need two and $$d=2$$. The displacement $$u$$ is always a single number, the distance moved in the one direction perpendicular to the interface. I'll keep $$d$$ general in the formulas and plug in $$d=1$$ when I want numbers.
+This is where $$d$$ comes in to the picture. The dimension $$d$$ is basically the dimension of the thing I'm pulling. For a rubber band, it's 1 dimensional. For a sheet, it would be 2 dimensional. There are even examples of 3 dimensional things (charge density waves). I'll keep $$d$$ general in the formulas and plug in $$d=1$$ when I want numbers.
 
-One more thing about (1) that is easy to miss: every term in it is a force *per unit volume of the interface*, meaning per unit length for the rubberband and per unit area for a sheet. That goes for the applied force $$f$$ and the pinning force $$F$$ as well. To get the total force on a piece of size $$R$$ you have to multiply by its volume, $$R^d$$. This will matter when we start counting energies.
+One more thing about (1) that is easy to miss: every term in it is a force *per unit volume of the interface*, meaning per unit length for the rubberband and per unit area for a sheet. That goes for the applied force $$f$$ and the pinning force $$F$$ as well. To get the total force on a piece of size $$R$$ you have to multiply by its volume, $$R^d$$. This will matter when we start counting energies. We do this because ultimately our description of the system is at a fixed point $$x$$, so we have to normalize by the volume.
 
-Back to the terms in (1). The model is overdamped, which means we consider the mass $$\times$$ acceleration of the rubberband as negligible in this case, and instead think of it as being dragged with a natural friction $$\eta$$.
+Back to the terms in (1). The model is overdamped, which means we consider the mass $$\times$$ acceleration of the rubber band as negligible in this case, and instead think of it as being dragged with a natural friction $$\eta$$.
 
-The most confusing terms are $$c\nabla^2u$$ and $$F(x, u)$$. The first is just the elastic force, e.g. the rubberband wants to be straight. The second is the rough surface we described, and it is the most interesting part of the problem. We postulate that it is completely uncorrelated between points on the rubberband, hence the $$\delta^d(x-x')$$. But we allow it to have correlations along points as it is dragged, so $$\Delta(u-u')$$ is not necessarily a Dirac-delta function. Finally the thermal noise $$\xi$$ is the temperature aspect, and it is what I studied the most.
+The most confusing terms are $$c\nabla^2u$$ and $$F(x, u)$$. The first is just the elastic force, e.g. the rubber band wants to be straight, in which case $$c\nabla^2u = 0$$. The second is the rough surface that we are sliding across, and it is the most interesting part of the problem. We postulate that it is completely uncorrelated between points on the rubber band, hence the $$\delta^d(x-x')$$. But we allow it to have correlations along points as it is dragged, so $$\Delta(u-u')$$ is not necessarily a Dirac-delta function. Finally the thermal noise $$\xi$$ is the temperature aspect, and it is what I studied the most.
 
-The basic situation is that the rubberband at a fixed force $$f$$ will be stuck at some point when the pinning force $$F(x, u)$$ is stronger. This can happen because we never assumed the force $$F$$ to be bounded. And also in real life, things usually get stuck at some point of stability. The interesting bit is that at a finite temperature $$T$$, a stuck thing can become unstuck, and the process by which it gets unstuck is known as a thermal avalanche.
+The basic situation is that the rubber band at a fixed force $$f$$ will be stuck at some point when the pinning force $$F(x, u)$$ is stronger. This can happen because we never assumed the force $$F$$ to be bounded. And also in real life, things usually get stuck at some point of stability. The interesting bit is that at a finite temperature $$T$$, a stuck thing can become unstuck, and the process by which it gets unstuck is known as a thermal avalanche.
 
 ### 2. Scaling and Avalanches at Zero Temperature
 
-At the microscopic level, the idealized rubberband will be a jagged surface.
+At the microscopic level, the idealized rubber band will be a jagged surface.
 
 <div class="imgcap">
 <img src="/assets/thermal-avalanches/fig03_roughness.png"
@@ -83,20 +83,20 @@ At the microscopic level, the idealized rubberband will be a jagged surface.
      width="700"
      height="auto">
 <div class="thecap">
-  Figure 3. A jagged rubberband. Two points a distance \(R\) apart differ in height by \(\delta u(R)\), which is defined just below. (Computer-generated example, not data.)
+  Figure 3. A jagged rubber band. Two points a distance \(R\) apart differ in height by \(\delta u(R)\), which is defined just below.
 </div>
 </div>
 
 It is basically impossible to write down the equation for this surface, partly because it is so rough, and also partly because we don't really care about that. What we care about are the statistics of this surface, in particular the roughness. How far this surface moves in the $$u$$ direction as we move along in the $$x$$ direction, on average.
 
-The way to measure roughness is to pick two points a distance $$R$$ apart along the rubberband and ask how different their displacements are, on average:
+The way to measure roughness is to pick two points a distance $$R$$ apart along the rubber band and ask how different their displacements are, on average:
 
 $$
 \delta u(R)^2\equiv\overline{\big[u(x+R)-u(x)\big]^2}\ \sim\ R^{2\zeta}.
 \tag{2}
 $$
 
-The overline is an average over the rough surface (or over $$x$$; for a long rubberband it's the same thing). The number $$\zeta$$ is called the roughness exponent. If $$\zeta=0$$ the rubberband is flat, and the bigger $$\zeta$$ is, the more it wanders.
+The overline is an average over the rough surface (or over $$x$$; for a long rubber band it's the same thing). The number $$\zeta$$ is called the roughness exponent. If $$\zeta=0$$ the band is flat, and the bigger $$\zeta$$ is, the more it wanders.
 
 The fact that (2) is a power law is the important part. It means there is no special length in the problem: if you zoom in by a factor $$b$$ along $$x$$ and by a factor $$b^{\zeta}$$ along $$u$$, the picture looks statistically the same (Figure 4).
 
@@ -106,13 +106,13 @@ The fact that (2) is a power law is the important part. It means there is no spe
      width="700"
      height="auto">
 <div class="thecap">
-  Figure 4. Top: a rough line. Bottom: the boxed quarter of it, blown up. You can't tell from the wiggles alone which one is the zoom. (Computer-generated example.)
+  Figure 4. Top: a rough line. Bottom: the boxed quarter of it, blown up. You can't tell from the wiggles alone which one is the zoom.
 </div>
 </div>
 
 This only works above a certain length, called the Larkin length $$R_c$$. Unlike most of what follows, this one can be worked out directly from the model, and the argument is a nice warm-up for everything else [6, 20].
 
-Start with a piece of rubberband so short that it hardly moves compared to the size of one bump in the surface. I'll call that size $$r_f$$; it is the distance over which $$\Delta(u)$$ dies off. If a point moves by much less than $$r_f$$, the pinning force on it doesn't change as it moves. So for a short piece we can replace $$F(x,u)$$ by a fixed random force $$F(x)$$ that doesn't care about $$u$$ at all.
+Start with a piece of rubber band so short that it hardly moves compared to the size of one bump in the surface. I'll call that size $$r_f$$; it is the distance over which $$\Delta(u)$$ dies off. If a point moves by much less than $$r_f$$, the pinning force on it doesn't change as it moves. So for a short piece we can replace $$F(x,u)$$ by a fixed random force $$F(x)$$ that doesn't care about $$u$$ at all.
 
 Now take a piece of length $$R$$ and ask how far it bends, $$\delta u$$. Two forces compete (both per unit volume of the interface, like everything in (1)):
 
@@ -126,7 +126,7 @@ $$
 \tag{3}
 $$
 
-For the rubberband ($$d=1$$) this grows like $$R^{3/2}$$, which is fast. (It also tells you where the number 4 comes from in this field: above four dimensions the exponent is negative, long pieces bend less than short ones, and the rough surface stops mattering.)
+For the rubber band ($$d=1$$) this grows like $$R^{3/2}$$, which is fast. (It also tells you that the number 4 is a crossover dimension: above four dimensions the exponent is negative, long pieces bend less than short ones, and the rough surface stops mattering.)
 
 So the assumption we started with can't last. Once $$\delta u$$ reaches $$r_f$$, points are moving past whole bumps and the force on them is no longer fixed. That happens at
 
@@ -135,9 +135,9 @@ R_c\approx\Big(\frac{c^2r_f^2}{\Delta(0)}\Big)^{\frac{1}{4-d}} .
 \tag{4}
 $$
 
-A stiff rubberband on a gentle surface has a long $$R_c$$; a floppy one on a harsh surface has a short one.
+A stiff rubber band on a gentle surface has a long $$R_c$$; a floppy one on a harsh surface has a short one.
 
-Below $$R_c$$ there is only one way for the rubberband to sit. Above $$R_c$$ each point has a choice of bumps to rest against, so there are many ways to sit, and that is where getting stuck, avalanches and everything else interesting comes from. It is also where the roughness changes from (3) to the power law (2), with a different exponent. Matching the two at $$R_c$$:
+Below $$R_c$$ there is only one way for the rubber band to sit. Above $$R_c$$ each point has a choice of bumps to rest against, so there are many ways to sit, and that is where getting stuck, avalanches and everything else interesting comes from. It is also where the roughness changes from (3) to the power law (2), with a different exponent. Matching the two at $$R_c$$:
 
 $$
 \delta u(R)\approx r_f\Big(\frac{R}{R_c}\Big)^{\zeta}\qquad\text{for }R>R_c .
@@ -146,9 +146,9 @@ $$
 
 #### Every length has its own force and energy
 
-Here is the idea that makes everything else work. Because of (5), every length scale $$R$$ comes with its own force scale and its own energy scale.
+Because of (5), every length scale $$R$$ comes with its own force scale and its own energy scale.
 
-To bend a piece of length $$R$$ by an amount $$\delta u$$ costs an elastic force of about $$c\,\delta u/R^2$$ (the two derivatives in $$c\nabla^2u$$ become two powers of $$1/R$$). When the rubberband is stuck, that elastic force is balanced by the pinning. So the pinning force holding a piece of size $$R$$, per unit volume, is about
+To bend a piece of length $$R$$ by an amount $$\delta u$$ costs an elastic force of about $$c\,\delta u/R^2$$ (the two derivatives in $$c\nabla^2u$$ become two powers of $$1/R$$). When the band is stuck, that elastic force is balanced by the pinning. So the pinning force holding a piece of size $$R$$, per unit volume, is about
 
 $$
 F(R)\approx\frac{c\,\delta u(R)}{R^2}=f_c\Big(\frac{R}{R_c}\Big)^{-(2-\zeta)},\qquad f_c\approx\frac{c\,r_f}{R_c^2}.
