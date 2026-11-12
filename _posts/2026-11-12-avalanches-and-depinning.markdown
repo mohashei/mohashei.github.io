@@ -110,7 +110,7 @@ The fact that (2) is a power law is the important part. It means there is no spe
 </div>
 </div>
 
-This only works above a certain length, called the Larkin length $$R_c$$. Unlike most of what follows, this one can be worked out directly from the model, and the argument is a nice warm-up for everything else [6, 20].
+This only works above a certain length, called the Larkin length $$R_c$$. The derivation is a nice warm-up for everything else [6, 20].
 
 Start with a piece of rubber band so short that it hardly moves compared to the size of one bump in the surface. I'll call that size $$r_f$$; it is the distance over which $$\Delta(u)$$ dies off. If a point moves by much less than $$r_f$$, the pinning force on it doesn't change as it moves. So for a short piece we can replace $$F(x,u)$$ by a fixed random force $$F(x)$$ that doesn't care about $$u$$ at all.
 
@@ -241,7 +241,7 @@ Now pull with a small force, $$f\ll f_c$$. At zero temperature nothing happens. 
 
 #### Which barrier?
 
-There are barriers at every scale, by (7). Which one sets the speed?
+There are barriers at every scale, by (7). Which one controls how fast the rubber band creeps along?
 
 Think about pushing a piece of size $$R$$ forward by $$\delta u(R)$$. It costs an energy $$U(R)$$ to climb out of the valley, and you get back the work done by the applied force. That is the total force on the piece, $$f\,R^d$$ (again, $$f$$ is per unit volume), times the distance moved, $$\delta u(R)$$:
 
@@ -296,7 +296,7 @@ It is a force, and it is proportional to the temperature.
 
 #### Thermal avalanches
 
-When a nucleus jumps, it pulls on its neighbors. That lowers their barriers, some of them jump too, and you get a cascade that looks a lot like the avalanches of Section 2, except that it was started by heat and not by pulling harder. This is a thermal avalanche (Figure 7).
+Thermal avalanches are how the barrier creeps along. When a nucleus jumps, it pulls on its neighbors. That lowers their barriers, some of them jump too, and you get a cascade that looks a lot like the avalanches of Section 2, except that it was started by heat and not by pulling harder. This is a thermal avalanche (Figure 7).
 
 <div class="imgcap">
 <img src="/assets/thermal-avalanches/fig07_thermal_avalanche.png"
