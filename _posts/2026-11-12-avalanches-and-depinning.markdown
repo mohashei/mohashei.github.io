@@ -19,9 +19,9 @@ mathjax: true
 Have you ever wondered how and why things break? Not just the external reasons, like too big of a load, but the microscopic explanations, like what goes on inside the material as it's breaking.
 I wrote my [PhD thesis](https://www.ideals.illinois.edu/items/112772) in part on elastic interfaces in disordered media. This sounds like a very complex problem, but actually it's relatively simple to describe.
 
-Imagine you are pulling a rubberband over a rough surface, and the rubberband gets caught at specific points. As you keep pulling, you can imagine the rubberband will snap off the caught ends to follow the pulling force. That snap is part of a large set of interconnected phenomena known as avalanches. We think of avalanches like a chain reaction process (known as a branching process in math) set off by a single or a set of single events. What comes to mind initially is large piles of snow sliding down a mountain, but earthquakes, neurons, and magnetic realignments are also different manifestations of avalanche behavior [1, 2].
+Imagine you are pulling a rubber band over a rough surface, and the rubber band gets caught at specific points. As you keep pulling, you can imagine the rubber band will snap off the caught ends to follow the pulling force. That snap is part of a large set of interconnected phenomena known as avalanches. We think of avalanches like a chain reaction process (known as a branching process in math) set off by a single or a set of single events. What comes to mind initially is large piles of snow sliding down a mountain, but earthquakes, neurons, and magnetic realignments are also different manifestations of avalanche behavior [1, 2].
 
-A more motivating example of breaking is that of a pillar that carries a powerful load. Eventually the pillar will develop shear bands (Figure 1), and these bands behave kind of like a rubberband that is being dragged across a rough surface. They want to slip off of each other, but they are prevented by the structural knots (pinning sites) in the material. This problem is well-known [3, 4, 5], but what I studied is how the system behaves at finite temperature.
+A more motivating example of breaking is that of a pillar that carries a powerful load. Eventually the pillar will develop shear bands (Figure 1), and these bands behave kind of like a rubber band that is being dragged across a rough surface. They want to slip off of each other, but they are prevented by the structural knots (pinning sites) in the material. This problem is well-known [3, 4, 5], but what I studied is how the system behaves at finite temperature.
 
 <div class="imgcap">
 <img src="/assets/thermal-avalanches/fig01_pillar.png"
@@ -41,7 +41,7 @@ A good abstracted figure of the situation is shown below:
      width="700"
      height="auto">
 <div class="thecap">
-  Figure 2. The abstract version, seen from far enough away that the rubberband (orange) looks jagged. It is pushed by a force \(f\) and held back where it is caught on pinning sites (black dots; the grey dots are all the other sites). Its shape is described by the displacement \(u(x)\). (Schematic.)
+  Figure 2. The abstract version, seen from far enough away that the rubber band (orange) looks jagged. It is pushed by a force \(f\) and held back where it is caught on pinning sites (black dots; the grey dots are all the other sites). Its shape is described by the displacement \(u(x)\). (Schematic.)
 </div>
 </div>
 
@@ -61,11 +61,11 @@ $$
 - $$F$$: pinning force, random, with $$\overline{F(x,u)F(x',u')}=\delta^d(x-x')\,\Delta(u-u')$$. $$\Delta$$ is even and decreases for $$u>0$$.
 - $$\xi$$: thermal noise, $$\langle\xi\xi\rangle=2\eta T\,\delta^d(x-x')\delta(t-t')$$.
 
-This model is complicated to interpret without some intuition. Basically the force $$f$$ is what drags the rubberband in our situation, and its position as it is dragged along is measured by $$u$$. The rubber band is one-dimensional, and so each piece of it can be displaced by a different amount, so $$u$$ is a function of the linear coordinate along the rubber band, $$u(x)$$.
+This model is complicated to interpret without some intuition. Basically the force $$f$$ is what drags the rubber band in our situation, and its position as it is dragged along is measured by $$u$$. The rubber band is one-dimensional, and so each piece of it can be displaced by a different amount, so $$u$$ is a function of the linear coordinate along the rubber band, $$u(x)$$.
 
 This is where $$d$$ comes in to the picture. The dimension $$d$$ is basically the dimension of the thing I'm pulling. For a rubber band, it's 1 dimensional. For a sheet, it would be 2 dimensional. There are even examples of 3 dimensional things (charge density waves). I'll keep $$d$$ general in the formulas and plug in $$d=1$$ when I want numbers.
 
-One more thing about (1) that is easy to miss: every term in it is a force *per unit volume of the interface*, meaning per unit length for the rubberband and per unit area for a sheet. That goes for the applied force $$f$$ and the pinning force $$F$$ as well. To get the total force on a piece of size $$R$$ you have to multiply by its volume, $$R^d$$. This will matter when we start counting energies. We do this because ultimately our description of the system is at a fixed point $$x$$, so we have to normalize by the volume.
+One more thing about (1) that is easy to miss: every term in it is a force *per unit volume of the interface*, meaning per unit length for the rubber band and per unit area for a sheet. That goes for the applied force $$f$$ and the pinning force $$F$$ as well. To get the total force on a piece of size $$R$$ you have to multiply by its volume, $$R^d$$. This will matter when we start counting energies. We do this because ultimately our description of the system is at a fixed point $$x$$, so we have to normalize by the volume.
 
 Back to the terms in (1). The model is overdamped, which means we consider the mass $$\times$$ acceleration of the rubber band as negligible in this case, and instead think of it as being dragged with a natural friction $$\eta$$.
 
@@ -168,7 +168,7 @@ So the energy goes the other way: bigger pieces sit in deeper valleys. This won'
 
 #### The depinning transition
 
-If you pull with a force $$f<f_c$$ at zero temperature, the rubberband moves a bit and gets stuck. If you pull with $$f>f_c$$ it never gets stuck. Right above the threshold the velocity is
+If you pull with a force $$f<f_c$$ at zero temperature, the rubber band moves a bit and gets stuck. If you pull with $$f>f_c$$ it never gets stuck. Right above the threshold the velocity is
 
 $$
 v\sim(f-f_c)^{\beta}.
@@ -203,7 +203,7 @@ $$
 
 (This relation is actually exact, because the elastic term can't be changed by the disorder [8].)
 
-The size of an avalanche, $$S$$, is the area the rubberband sweeps (for a general interface, its volume $$\ell^d$$ times the distance moved). An avalanche of extent $$\ell$$ moves forward by about $$\delta u(\ell)$$, so
+The size of an avalanche, $$S$$, is the area the rubber band sweeps (for a general interface, its volume $$\ell^d$$ times the distance moved). An avalanche of extent $$\ell$$ moves forward by about $$\delta u(\ell)$$, so
 
 $$
 S\sim\ell^{\,d+\zeta},\qquad P(S)\sim S^{-\tau}\quad\text{up to}\quad S_{\max}\sim\ell_{\rm dep}^{\,d+\zeta}.
@@ -212,14 +212,14 @@ $$
 
 Most avalanches are tiny and a few are huge, which is the same statistics you see in earthquakes.
 
-For a rubberband ($$d=1$$) the measured numbers are $$\zeta\approx1.25$$, $$\nu\approx1.33$$ and $$\beta\approx0.25$$ [9], and the scaling relation $$\tau=2-2/(d+\zeta)$$ [8] then gives $$\tau\approx1.11$$. A recent review of all of this is [11].
+For a rubber band ($$d=1$$) the measured numbers are $$\zeta\approx1.25$$, $$\nu\approx1.33$$ and $$\beta\approx0.25$$ [9], and the scaling relation $$\tau=2-2/(d+\zeta)$$ [8] then gives $$\tau\approx1.11$$. A recent review of all of this is [11].
 
 #### One subtlety: there are two roughnesses
 
-The exponent $$\zeta$$ depends on how the rubberband got to where it is.
+The exponent $$\zeta$$ depends on how the rubber band got to where it is.
 
-- If nobody is pulling and it has had forever to find its most comfortable position, you get the *equilibrium* roughness, $$\zeta_{\rm eq}$$. For a rubberband on the most common kind of rough surface, $$\zeta_{\rm eq}=2/3$$ [10].
-- If it was dragged there and is just barely stuck, you get the *depinning* roughness, which is the $$\zeta\approx1.25$$ above. A dragged rubberband is rougher than a relaxed one.
+- If nobody is pulling and it has had forever to find its most comfortable position, you get the *equilibrium* roughness, $$\zeta_{\rm eq}$$. For a rubber band on the most common kind of rough surface, $$\zeta_{\rm eq}=2/3$$ [10].
+- If it was dragged there and is just barely stuck, you get the *depinning* roughness, which is the $$\zeta\approx1.25$$ above. A dragged rubber band is rougher than a relaxed one.
 
 So equations (5)–(7) come in two versions, one with $$\zeta_{\rm eq}$$ and one with $$\zeta$$. We are going to need both, and keeping track of which one applies where is most of the game.
 
@@ -227,7 +227,7 @@ Here is everything so far in one place:
 
 | Quantity | Meaning | Scaling |
 |---|---|---|
-| $$R_c$$ | Larkin length: where the rubberband starts to have a choice | $$(c^2r_f^2/\Delta(0))^{1/(4-d)}$$ |
+| $$R_c$$ | Larkin length: where the rubber band starts to have a choice | $$(c^2r_f^2/\Delta(0))^{1/(4-d)}$$ |
 | $$\delta u(R)$$ | how far a piece of size $$R$$ wanders | $$r_f(R/R_c)^{\zeta}$$ |
 | $$F(R)$$ | pinning force on a piece of size $$R$$, per unit volume | $$f_c(R/R_c)^{-(2-\zeta)}$$ |
 | $$U(R)$$ | energy scale of a piece of size $$R$$ | $$U_c(R/R_c)^{\theta}$$, $$\theta=d-2+2\zeta$$ |
@@ -237,7 +237,7 @@ Here is everything so far in one place:
 
 ### 3. Turning on the temperature
 
-Now pull with a small force, $$f\ll f_c$$. At zero temperature nothing happens. At finite temperature the noise $$\xi$$ keeps jiggling the rubberband, and every so often a piece gets jiggled over the bump that was holding it. To get over a barrier of height $$U$$ takes a time of about $$e^{U/T}$$ (I'm measuring temperature in energy units), so the motion is slow, but it isn't zero. This slow motion is called creep. It is the orange tail below $$f_c$$ in Figure 5.
+Now pull with a small force, $$f\ll f_c$$. At zero temperature nothing happens. At finite temperature the noise $$\xi$$ keeps jiggling the rubber band, and every so often a piece gets jiggled over the bump that was holding it. To get over a barrier of height $$U$$ takes a time of about $$e^{U/T}$$ (I'm measuring temperature in energy units), so the motion is slow, but it isn't zero. This slow motion is called creep. It is the orange tail below $$f_c$$ in Figure 5.
 
 #### Which barrier?
 
@@ -272,7 +272,7 @@ $$
 
 A bump of size $$\ell_{\rm opt}$$ is called a nucleus. Anything smaller falls back; anything that makes it to this size keeps going. Another way to say the same thing: $$\ell_{\rm opt}$$ is the scale whose pinning force (6) equals the force you are applying.
 
-For the rubberband, $$\mu=1/4$$.
+For the rubber band, $$\mu=1/4$$.
 
 #### The creep law
 
@@ -310,7 +310,7 @@ When a nucleus jumps, it pulls on its neighbors. That lowers their barriers, som
 
 So there are two lengths in creep, and the picture that has come out of simulations [16, 17] is (Figure 8):
 
-- below $$\ell_{\rm opt}$$ the rubberband is relaxed and has the equilibrium roughness $$\zeta_{\rm eq}$$;
+- below $$\ell_{\rm opt}$$ the rubber band is relaxed and has the equilibrium roughness $$\zeta_{\rm eq}$$;
 - between $$\ell_{\rm opt}$$ and a larger length $$\ell_{\rm av}$$ it moves in avalanches and has the depinning roughness $$\zeta$$;
 - beyond $$\ell_{\rm av}$$ different patches don't know about each other, and the motion averages out to a steady drift.
 
@@ -330,7 +330,7 @@ $$\ell_{\rm av}$$ is the largest size a thermal avalanche reaches.
 
 How does $$\ell_{\rm av}$$ depend on temperature and force?
 
-There are two answers in the literature. The field-theory calculation that derived the creep law (14) also estimated this length and got $$\ell_{\rm av}\propto T^{-\nu/\beta}$$ [14]. A more recent scaling argument [18] and simulations [19] say $$\ell_{\rm av}\propto T^{-\nu}$$. For the rubberband these are $$T^{-5.4}$$ and $$T^{-1.33}$$, which is not a small disagreement.
+There are two answers in the literature. The field-theory calculation that derived the creep law (14) also estimated this length and got $$\ell_{\rm av}\propto T^{-\nu/\beta}$$ [14]. A more recent scaling argument [18] and simulations [19] say $$\ell_{\rm av}\propto T^{-\nu}$$. For the rubber band these are $$T^{-5.4}$$ and $$T^{-1.33}$$, which is not a small disagreement.
 
 Which one is right, and why, is the subject of Part 2. There I'll go through the field-theory calculation and show that, done consistently, it gives $$T^{-\nu}$$ too.
 
