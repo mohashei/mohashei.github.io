@@ -94,9 +94,13 @@ O[u_{\rm solution}]=\int\mathcal{D}u\,\mathcal{D}\hat u\;\mathcal{J}\;O[u]\;\exp
 \tag{4}
 $$
 
-Here $$\mathcal{D}u$$ means an integral over the value of $$u$$ at every point and time, and $$\mathcal{J}$$ is the grown-up version of $$\lvert g'\rvert$$ in (2): the determinant of how the square bracket changes when you change $$u$$.
+Here $$\mathcal{D}u$$ means an integral over the value of $$u$$ at every point and time, and $$\mathcal{J}$$ is the generalization of $$\lvert g'\rvert$$ in (2): the determinant of the equation $$E = 0$$ we are trying to model with respect to $$u$$. Let's look at that matrix:
 
-In general $$\mathcal{J}$$ would be a disaster, because it depends on $$u$$ and on $$F$$. Here causality saves us. Step time forward in small steps $$\delta t$$. Equation (1) says that $$u$$ at time $$t+\delta t$$ is $$u$$ at time $$t$$ plus $$\delta t/\eta$$ times the forces at time $$t$$. So the equation for time $$t$$ contains the *next* value of $$u$$ exactly once, with the coefficient $$\eta/\delta t$$, and otherwise only values from the past. The matrix of derivatives is triangular with a constant on the diagonal, so its determinant is a constant. It doesn't know about $$u$$ or $$F$$, and we can drop it.
+$$
+\frac{\delta E(x, t)}{\delta u(x', t')} = [\eta \partial_t - c\nabla^2 - F'(x, u)]\delta(x-x')\delta(t-t')
+$$
+
+Here $$f$$ drops out as a constant and $$\delta(x-x')\delta(t-t')$$ comes from taking the functional derivative of $$u(x, t)$$ at $$x', t'$$. Clearly this is super complicated to evaluate in general, but we take the Ito convention. This means that $$u$$ *only* depends on times before.
 
 There is one more thing that comes for free. Put $$O=1$$ in (4). The answer is $$1$$, whatever $$F$$ is, because (1) has exactly one solution once you say where the band starts. This sounds trivial, but it is the reason this method works so well for rough surfaces. In equilibrium problems the normalization (the partition function) depends on the rough surface, you have to average its logarithm, and that is what forces people into the replica trick I mentioned above. Here there is nothing to normalize, so we can average (4) over the rough surface directly.
 
