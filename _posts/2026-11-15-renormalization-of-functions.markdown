@@ -100,7 +100,13 @@ $$
 \frac{\delta E(x, t)}{\delta u(x', t')} = [\eta \partial_t - c\nabla^2 - F'(x, u)]\delta(x-x')\delta(t-t')
 $$
 
-Here $$f$$ drops out as a constant and $$\delta(x-x')\delta(t-t')$$ comes from taking the functional derivative of $$u(x, t)$$ at $$x', t'$$. Clearly this is super complicated to evaluate in general, but we take the Ito convention. This means that $$u$$ *only* depends on times before.
+Here $$f$$ drops out as a constant and $$\delta(x-x')\delta(t-t')$$ comes from taking the functional derivative of $$u(x, t)$$ at $$x', t'$$. Clearly this is super complicated to evaluate in general, but we take the Ito convention. This means that $$u$$ *only* depends on times before. So then it turns out that:
+
+$$
+E_t = \frac{\eta}{dt}(u(x, t+dt)-u(x, t)) - c\nabla^2u(x, t) - F(x, u(x, t)) - f
+$$
+
+Now consider the sequence of all $$E_t$$, starting at $$0$$ and ending at $$T$$. This sequence is going to start at $$E_0, ..., E_{T-dt}$$, where the equation ends before the final output. Practically, if we're solving for $$T$$ time, we don't need an equation for $$T$$ because the $$T - dt$$ step gives us the final output. So $$\partial E_t/\partial u(x, t + dt)$$ is the correct quantity to look at, and this is constant, it is just $$\eta/dt$$! It is badly singular, but we don't need to worry about that, and we can safely ignore the Jacobian.
 
 There is one more thing that comes for free. Put $$O=1$$ in (4). The answer is $$1$$, whatever $$F$$ is, because (1) has exactly one solution once you say where the band starts. This sounds trivial, but it is the reason this method works so well for rough surfaces. In equilibrium problems the normalization (the partition function) depends on the rough surface, you have to average its logarithm, and that is what forces people into the replica trick I mentioned above. Here there is nothing to normalize, so we can average (4) over the rough surface directly.
 
