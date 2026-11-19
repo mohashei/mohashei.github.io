@@ -185,8 +185,12 @@ In the language of the action, we split $$u$$ into a slow part and a fast part a
 
 Now we denote $$u$$ the slow part, and $$\delta u(x)$$ the fast part. The fast part is made of waves in a thin shell of wavevectors just below the largest one we still keep, which I'll call $$\Lambda$$. So the shell is $$\Lambda/b<q<\Lambda$$.
 
-**The wiggles respond to the pinning force.** Hold the slow part at $$u$$. By (8), a wave responds to a force with a displacement $$1/cq^2$$ times the force, so
+**The response function.** An important point of almost all perturbative field theory calculations is that we are dealing with Gaussian integrals in some form or another. Here the Gaussian term is the quadratic part of the action 
+$$
+R_q(t)=\frac1\eta\,e^{-cq^2t/\eta}\quad(t>0)
+$$
 
+The response from the the fast part
 $$
 \delta u(x)=\int_yG(x-y)\,F(y,u),\qquad G(x)=\int_{\rm shell}\frac{d^dq}{(2\pi)^d}\,\frac{e^{iqx}}{cq^2}.
 \tag{10}
