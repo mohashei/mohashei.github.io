@@ -376,10 +376,10 @@ So the cusp is telling us that beyond the Larkin length, the force on a piece of
 The cusp also gives us the threshold force. Go back to the piece of $$\langle V\rangle$$ that we set aside, the one with a single $$\hat u$$ left over. Doing the pairing (the two choices of which $$\hat u$$ is the fast one give the same thing):
 
 $$
-\langle V\rangle_{\rm one\ \hat u}=\int_{xt}\hat u(x,t)\int_0^\infty d\tau\;R_{\rm shell}(\tau)\;\Delta'\big(u(x,t)-u(x,t-\tau)\big),\qquad R_{\rm shell}(\tau)=\int_{\rm shell}\frac{d^dq}{(2\pi)^d}\,R_q(\tau).
+\langle V\rangle_{\rm one\ \hat u}=\int_{xt}\hat u(x,t)\int_0^\infty d\tau\;R_{\rm shell}(\tau)\;\Delta'\big(u(x,t)-u(x,t-\tau)\big).
 $$
 
-Compare this with the term $$-f\int_{xt}\hat u$$ in (6), remembering the minus sign in front of $$\langle V\rangle$$ in (12). It has the same form, so whatever multiplies $$\hat u$$ is a force. It is the mean pinning force that the fast part passes on to the slow part. If we ignore the delay $$\tau$$, it is $$\Delta'(0)$$ times a constant. With a smooth $$\Delta$$ that is zero: the bumps ahead push back exactly as much as the bumps behind push forward. A smooth $$\Delta$$ can't pin anything. With a cusp, $$\Delta'(0)$$ isn't defined. It is $$-\chi$$ just to the right of zero and $$+\chi$$ just to the left, and we have to ask which one we mean.
+Here $$R_{\rm shell}(\tau)=\int_{\rm shell}\frac{d^dq}{(2\pi)^d}\,R_q(\tau)$$ is the response function (8) added up over the shell. Compare this with the term $$-f\int_{xt}\hat u$$ in (6), remembering the minus sign in front of $$\langle V\rangle$$ in (12). It has the same form, so whatever multiplies $$\hat u$$ is a force. It is the mean pinning force that the fast part passes on to the slow part. If we ignore the delay $$\tau$$, it is $$\Delta'(0)$$ times a constant. With a smooth $$\Delta$$ that is zero: the bumps ahead push back exactly as much as the bumps behind push forward. A smooth $$\Delta$$ can't pin anything. With a cusp, $$\Delta'(0)$$ isn't defined. It is $$-\chi$$ just to the right of zero and $$+\chi$$ just to the left, and we have to ask which one we mean.
 
 The answer is already in the formula: the fast part responds a little late, by (8). The fast part at $$x$$ now was set by the force a time $$\tau$$ ago, and if the band is moving forward at speed $$v$$ it was then a distance $$v\tau$$ behind where it is now. So the mean force is
 
