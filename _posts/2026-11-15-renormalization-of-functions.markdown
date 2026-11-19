@@ -94,7 +94,7 @@ O[u_{\rm solution}]=\int\mathcal{D}u\,\mathcal{D}\hat u\;\mathcal{J}\;O[u]\;\exp
 \tag{4}
 $$
 
-Here $$\mathcal{D}u$$ means an integral over the value of $$u$$ at every point and time, and $$\mathcal{J}$$ is the generalization of $$\lvert g'\rvert$$ in (2): the determinant of the equation $$E = 0$$ we are trying to model with respect to $$u$$. Let's look at that matrix:
+Here $$\mathcal{D}u$$ means an integral over the value of $$u$$ at every point and time, and $$\mathcal{J}$$ is the generalization of $$\lvert g'\rvert$$ in (2): the determinant of the equation (1), which we will call $$E = 0$$, we are trying to model with respect to $$u$$. Let's look at that matrix:
 
 $$
 \frac{\delta E(x, t)}{\delta u(x', t')} = [\eta \partial_t - c\nabla^2 - F'(x, u)]\delta(x-x')\delta(t-t')
