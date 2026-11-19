@@ -124,7 +124,7 @@ There is one $$x$$, because the rough surface is uncorrelated between different 
 Last, a change of notation to get rid of the $$i$$'s: rename $$i\hat u\to-\hat u$$. (This means $$\hat u$$ is integrated up and down the imaginary axis. Nothing else changes.) The result is
 
 $$
-\overline{O[u]}=\int\mathcal{D}u\,\mathcal{D}\hat u\;O[u]\;e^{-S},
+\overline{O[u_{\rm solution}]}=\int\mathcal{D}u\,\mathcal{D}\hat u\;O[u]\;e^{-S}\equiv\langle O[u]\rangle,
 $$
 
 $$
@@ -134,6 +134,8 @@ $$
 
 This is the MSR action. The rough surface is gone. All that is left of it is the function $$\Delta$$.
 
+A word on notation. An overbar is an average over the rough surface, as in Part 1. Angle brackets are an average with the weight $$e^{-S}$$, as in the line above (6). The first is something we do to the pinning force, and the second is an integral over $$u$$ and $$\hat u$$. From here on almost everything is the second kind.
+
 #### What the action is telling us
 
 Three things are worth pointing out before we calculate anything.
@@ -141,7 +143,7 @@ Three things are worth pointing out before we calculate anything.
 **$$\hat u$$ is how you kick the system.** Add a small extra force $$h(x,t)$$ to (1). In (6) it shows up next to $$f$$, as $$-\int_{xt}\hat u\,h$$. So asking how the band responds to a kick is the same as asking how $$u$$ is correlated with $$\hat u$$:
 
 $$
-\frac{\delta\,\overline{u(x,t)}}{\delta h(x',t')}=\overline{u(x,t)\,\hat u(x',t')}\equiv R(x-x',t-t').
+\frac{\delta\,\langle u(x,t)\rangle}{\delta h(x',t')}=\langle u(x,t)\,\hat u(x',t')\rangle\equiv R(x-x',t-t').
 \tag{7}
 $$
 
@@ -197,7 +199,7 @@ $$
 
 where I transformed into momentum space. Note the asymmetry between time and space here, one time derivative against two space derivatives, because the motion is overdamped.
 
-A Gaussian integral is completely determined by the inverse of whatever sits in the middle, and the inverse of $$\eta\,\partial_t+cq^2$$ is the response function (8). So when we average over the fast parts, which I'll write with angle brackets, the only pairing that gives anything is one $$\delta u$$ with one $$\delta\hat u$$:
+A Gaussian integral is completely determined by the inverse of whatever sits in the middle, and the inverse of $$\eta\,\partial_t+cq^2$$ is the response function (8). So when we average over the fast parts only, holding the slow parts fixed (until the end of this section, that is what the angle brackets mean), the only pairing that gives anything is one $$\delta u$$ with one $$\delta\hat u$$:
 
 $$
 \langle\delta u(q,t)\,\delta\hat u(-q,t')\rangle=R_q(t-t'),\qquad\langle\delta u\,\delta u\rangle=0,\qquad\langle\delta\hat u\,\delta\hat u\rangle=0 .
@@ -212,7 +214,7 @@ $$
 \tag{10}
 $$
 
-($$G$$ is the response function (7) after integrating over time.) I evaluated $$F$$ at $$u$$ and not at $$u+\delta u$$, which assumes the fast part is small. How small? Average the square of (10):
+($$G$$ is the response function (7) after integrating over time.) I evaluated $$F$$ at $$u$$ and not at $$u+\delta u$$, which assumes the fast part is small. How small? Average the square of (10) over the rough surface:
 
 $$
 \overline{\delta u^2}=\Delta(0)\,I,\qquad I\equiv\int_yG(y)^2=\int_{\rm shell}\frac{d^dq}{(2\pi)^d}\,\frac{1}{(cq^2)^2}.
@@ -381,17 +383,17 @@ $$
 
 Here $$R_{\rm shell}(\tau)=\int_{\rm shell}\frac{d^dq}{(2\pi)^d}\,R_q(\tau)$$ is the response function (8) added up over the shell. Compare this with the term $$-f\int_{xt}\hat u$$ in (6), remembering the minus sign in front of $$\langle V\rangle$$ in (12). It has the same form, so whatever multiplies $$\hat u$$ is a force. It is the mean pinning force that the fast part passes on to the slow part. If we ignore the delay $$\tau$$, it is $$\Delta'(0)$$ times a constant. With a smooth $$\Delta$$ that is zero: the bumps ahead push back exactly as much as the bumps behind push forward. A smooth $$\Delta$$ can't pin anything. With a cusp, $$\Delta'(0)$$ isn't defined. It is $$-\chi$$ just to the right of zero and $$+\chi$$ just to the left, and we have to ask which one we mean.
 
-The answer is already in the formula: the fast part responds a little late, by (8). The fast part at $$x$$ now was set by the force a time $$\tau$$ ago, and if the band is moving forward at speed $$v$$ it was then a distance $$v\tau$$ behind where it is now. So the mean force is
+The answer is already in the formula: the fast part responds a little late, by (8). The fast part at $$x$$ now was set by the force a time $$\tau$$ ago, and if the band is moving forward at speed $$v$$ it was then a distance $$v\tau$$ behind where it is now. So the force that the shell adds, which I'll call $$\delta f$$, is
 
 $$
-\overline{F_{\rm new}}=\int_0^\infty d\tau\;R_{\rm shell}(\tau)\;\Delta'(v\tau).
+\delta f=\int_0^\infty d\tau\;R_{\rm shell}(\tau)\;\Delta'(v\tau).
 \tag{18}
 $$
 
 The argument of $$\Delta'$$ is positive. For a slow band $$v\tau$$ is small, so $$\Delta'(v\tau)\approx-\chi+\Delta''(0^+)\,v\tau$$, and doing the two time integrals with (8) gives
 
 $$
-\overline{F_{\rm new}}=-\chi\int_{\rm shell}\frac{d^dq}{(2\pi)^d}\,\frac{1}{cq^2}\;+\;\Delta''(0^+)\,I\;\eta v .
+\delta f=-\chi\int_{\rm shell}\frac{d^dq}{(2\pi)^d}\,\frac{1}{cq^2}\;+\;\Delta''(0^+)\,I\;\eta v .
 \tag{19}
 $$
 
@@ -472,7 +474,7 @@ Here is this post in one place:
 | Quantity | Meaning | Result |
 |---|---|---|
 | $$S$$ | the MSR action | equation (6) |
-| $$\hat u$$ | response field: how you kick the system | $$\overline{u\,\hat u}=R$$ |
+| $$\hat u$$ | response field: how you kick the system | $$\langle u\,\hat u\rangle=R$$ |
 | $$\Delta(u)$$ | correlator of the pinning force | flows by (14) |
 | $$R_c$$ | Larkin length | where $$-\Delta''(0)$$ blows up, (16) |
 | $$\chi=-\Delta'(0^+)$$ | slope of the cusp | sets the threshold force, (19) |
