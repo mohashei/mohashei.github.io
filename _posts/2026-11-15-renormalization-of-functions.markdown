@@ -188,17 +188,19 @@ Now we denote $$u$$ the slow part, and $$\delta u(x)$$ the fast part. The fast p
 **The response function.** An important point of almost all perturbative field theory calculations is that we are dealing with Gaussian integrals in some form or another. Here the Gaussian term is the quadratic part of the action
 
 $$
-R_q(t)=\frac1\eta\,e^{-cq^2t/\eta}\quad(t>0)
+\int \frac{d^dq}{(2\pi)^d}dt \hat{u}(q, t)(\eta \partial_t - cq^2)u(q, t)
 $$
 
-The response from the the fast part
+where I transformed into momentum space. Note the asymmetry in time and space here, because we're dealing with a classical theory.
+
+The response from the the fast part (which relaxes at frequencies $$1/\Lambda^2$$) will be integrated with respect to time from eq (8), so
 
 $$
 \delta u(x)=\int_yG(x-y)\,F(y,u),\qquad G(x)=\int_{\rm shell}\frac{d^dq}{(2\pi)^d}\,\frac{e^{iqx}}{cq^2}.
 \tag{10}
 $$
 
-(In the action, $$G$$ is the response function (7), a pairing of one $$\hat u$$ with one $$u$$.) I evaluated $$F$$ at $$u$$ and not at $$u+\delta u$$, which assumes the wiggles are small. How small? Average the square of (10):
+(In the action, $$G$$ is the response function (7) after integrating over time, a pairing of one $$\hat u$$ with one $$u$$.) I evaluated $$F$$ at $$u$$ and not at $$u+\delta u$$, which assumes the fast parts are small. How small? Average the square of (10):
 
 $$
 \overline{\delta u^2}=\Delta(0)\,I,\qquad I\equiv\int_yG(y)^2=\int_{\rm shell}\frac{d^dq}{(2\pi)^d}\,\frac{1}{(cq^2)^2}.
@@ -207,28 +209,23 @@ $$
 
 This is Larkin's estimate, equation (3) of Part 1, for a piece of size $$1/\Lambda$$.
 
-**The slow part now feels a slightly different force.** The point at $$x$$ is really at $$u+\delta u(x)$$, so the pinning force on it is
+**The new correlator.** We need to do the calculation:
 
 $$
-F_{\rm new}(x,u)=F(x,u)+F'(x,u)\,\delta u(x)+\tfrac12F''(x,u)\,\delta u(x)^2+\dots
-\tag{12}
-$$
-
-where the primes are derivatives with respect to $$u$$. Everything on the right is built out of $$F$$. So $$F_{\rm new}$$ is another random force, and step 3 of renormalization, finding the new couplings, means finding its correlator.
-
-**The new correlator.** Compare the slow part at two positions, $$u$$ and $$u'$$. (If you like, these are the positions of the same patch at two different times, which is what the two times in (6) were for.) Multiply (12) at $$(x,u)$$ by (12) at $$(x',u')$$, average, and keep the terms with four $$F$$'s. Because $$F$$ is Gaussian, the average of four $$F$$'s is a sum of products of pairs, and each pair is a $$\Delta$$ or a derivative of one. Three pieces survive. Writing $$w=u-u'$$:
-
-- from $$F'\delta u\times F'\delta u$$, pairing the two $$F'$$ with each other and the two wiggles with each other: $$-\Delta''(w)\,\Delta(w)\,I$$;
-- from the same product, pairing each $$F'$$ with the $$F$$ inside the other one's wiggle: $$-\Delta'(w)^2\,I$$;
-- from $$F\times\tfrac12F''\delta u^2$$, which appears twice: $$+\Delta''(w)\,\Delta(0)\,I$$.
-
-(The minus signs come from $$\partial_u\partial_{u'}\Delta(u-u')=-\Delta''$$.) The other ways of pairing give nothing. Either they contain $$\Delta'(0)$$, which is zero for a smooth $$\Delta$$ (remember this, it is about to matter), or they average to zero over the patch because the wiggles have no long-wavelength part. Adding up,
-
-$$
-\Delta_{\rm new}(w)=\Delta(w)-I\,\Big[\Delta'(w)^2+\Delta''(w)\big(\Delta(w)-\Delta(0)\big)\Big]
-=\Delta(w)-\frac{I}{2}\,\frac{d^2}{dw^2}\big[\Delta(w)-\Delta(0)\big]^2 .
+e^{S_new} = e^{S_slow}\langle e^V\rangle_{fast} \righarrow S_new = S_slow + \ln\langle e^V\rangle_{fast}
 \tag{13}
 $$
+The brackets average over the fast modes. Obviously this integral is intractable. The logarithm gives a cumulant expansion here, with the first term being $$\langle V\rangle$$.
+
+$$
+V = \frac{1}{2}\int_{fast} (\hat{u}_1+\delta\hat{u}_1)(\hat{u}_2+\delta\hat{u}_2)[\Delta+ \Delta'(\delta u_1 - \delta u_2) + \frac{1}{2}\Delta''(\delta u_1 - \delta u_2)^2 + \ldots]
+$$
+
+The $$\Delta$$ are evaluated at the slow modes $$u_1 - u_2$$, with $$1$$ and $$2$$ being distinct times $$t$$ and $$t'$$. If you see, this is literally just the first order Taylor expansion of the correlator term, and then the inner expansion of the $$\Delta$$ terms. Only $$\langle\delta u_1 \delta\hat{u}_2\rangle = R$$ contribute, no other term survives. Remember $$R$$ is causal, so it is 0 if $$t_1 < t_2$$ and 0 at equal times.
+
+Importantly, any $$\hat{u}_1\hat{u}_2$$ term is canceled, because then there are no $$\delta\hat{u}$$ terms to contract with, so we know this vertex can't give any correction to the disorder. So the next step is to go to second order. At second order, there are 4 time variables to keep track of, because $$V$$ has two times, so $$V^2$$ will have 4. There's also an extra factor of $$1/2$$ from expanding $$e^x$$. Now I'm not going to write out the full equation, because it's long. Instead, we should reason about the exact possible contributions. Call the first vertex $$V_a$$, with times $$t_1$$ and $$t_2$$, and the second $$V_b$$, with times $$t_3$$ and $$t_4$$. There are really two cases.
+
+*Case A*: Both $$\delta u$$ from one vertex a, both $$\delta\hat{u}$$ from vertex b. Then from a we have $$1/2 \hat{u}_1\hat{u}_2 1/2\Delta''(u_{12})(\delta u_1 - \delta u_2)^2$$. From b we have $$1/2\Delta(u_{34})\delta\hat{u}_3\delta\hat{u}_4$$. The actual contraction is over $$\langle (\delta u_1 - \delta u_2)^2\delta\hat{u}_3\delta\hat{u}_4\rangle = 2[R_{13}R_{14} + R_{23}R_{24} - R_{13}R_{24} - R_{23}R_{14}]$$.
 
 #### The flow equation
 
