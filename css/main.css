@@ -343,6 +343,7 @@ a:visited { color: #205caa; }
 
 /* wide equations and tables scroll sideways instead of widening the page */
 /* ----------------------------------------------------------*/
+.post-content .kdmath,
 .post-content .MathJax_Display,
 .post-content .MJXc-display,
 .post-content .MathJax_SVG_Display,
