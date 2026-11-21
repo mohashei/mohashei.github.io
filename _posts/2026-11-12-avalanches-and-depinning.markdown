@@ -45,7 +45,7 @@ A good abstracted figure of the situation is shown below:
 </div>
 </div>
 
-I wanted to finish what I started in my thesis, but actually many people have basically done this and corrected many of the problems I had in my thesis. So when I revisited things, I found a different, smaller problem to address. This is Part 1, which sets up the problem; Part 2 will answer it. Fair warning is that this is a pretty math-heavy post.
+I wanted to finish what I started in my thesis, but actually many people have basically done this and corrected many of the problems I had in my thesis. So when I revisited things, I found a different, smaller problem to address. This is Part 1, which sets up the problem. [Part 2](/2026/11/15/renormalization-of-functions/) works out the theory at zero temperature, and Part 3 will turn the temperature on and answer it. Fair warning is that this is a pretty math-heavy post.
 
 ### 1. The model
 
@@ -285,7 +285,7 @@ $$
 
 This is the creep law [12, 13, 14]. The strange thing about it is that the barrier grows without limit as the force goes to zero, so the response to a tiny force is not just small, it is exponentially small. It has been checked in experiments on magnetic domain walls over many decades of velocity [15].
 
-One more quantity falls out of (14) and will be important in Part 2. Ask how much extra force it takes to speed things up by a factor of $$e$$:
+One more quantity falls out of (14) and will be important in Part 3. Ask how much extra force it takes to speed things up by a factor of $$e$$:
 
 $$
 \frac{\partial f}{\partial\ln v}=\frac{T\,f}{\mu\,U_{\rm opt}} .
@@ -332,7 +332,7 @@ How does $$\ell_{\rm av}$$ depend on temperature and force?
 
 There are two answers in the literature. The field-theory calculation that derived the creep law (14) also estimated this length and got $$\ell_{\rm av}\propto T^{-\nu/\beta}$$ [14]. A more recent scaling argument [18] and simulations [19] say $$\ell_{\rm av}\propto T^{-\nu}$$. For the rubber band these are $$T^{-5.4}$$ and $$T^{-1.33}$$, which is not a small disagreement.
 
-Which one is right, and why, is the subject of Part 2. There I'll go through the field-theory calculation and show that, done consistently, it gives $$T^{-\nu}$$ too.
+Which one is right, and why, takes two more posts. [Part 2](/2026/11/15/renormalization-of-functions/) is about zero temperature: it sets up the field theory and shows how the pinning force changes as we zoom out. Part 3 is about finite temperature. There I'll go through the field-theory calculation and show that, done consistently, it gives $$T^{-\nu}$$ too.
 
 | Quantity | Meaning | Scaling |
 |---|---|---|
